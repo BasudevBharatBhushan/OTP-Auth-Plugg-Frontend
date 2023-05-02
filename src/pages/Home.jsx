@@ -42,7 +42,7 @@ const Home = () => {
 
   const handleSubmit = () => {
     const Obtainedotp = blockRefs.current.reduce(
-      (otp, block) => otp + block.value,
+      (Obtainedotp, block) => Obtainedotp + block.value,
       ""
     );
     setOtp(Obtainedotp);
