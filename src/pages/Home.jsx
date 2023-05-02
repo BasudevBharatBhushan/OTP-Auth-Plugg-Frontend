@@ -49,7 +49,10 @@ const Home = () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ phoneNumber: "+91" + mobileNumber, otpCode: otp }),
+      body: JSON.stringify({
+        phoneNumber: "+91" + mobileNumber,
+        otpCode: Obtainedotp,
+      }),
     };
     fetch("https://plugg-otp-auth.onrender.com/otp", requestOptions)
       .then((response) => response.json())
