@@ -73,6 +73,7 @@ const Home = () => {
           className="otp-block"
           ref={(ref) => (blockRefs.current[0] = ref)}
           onInput={(e) => handleInput(0, e)}
+          autoFocus
         />
         <input
           type="text"
