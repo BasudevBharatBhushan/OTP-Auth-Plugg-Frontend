@@ -80,3 +80,15 @@
   color: white;
   text-align: center;
 }
+
+.timer {
+  color: white;
+  text-align: center;
+}
+
+.timerbody {
+  font-size: 2vw;
+  color: white;
+  text-align: center;
+  margin: 10% auto;
+}
