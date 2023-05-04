@@ -13,26 +13,26 @@ const Home = () => {
   const [timerAnimation, setTimerAnimation] = useState(true);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const requestOptions = {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ phoneNumber: "+91" + mobileNumber }),
-  //   };
-  //   fetch("https://plugg-otp-auth.onrender.com/phone", requestOptions)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setMessage(data.message);
-  //       if (data.message === "You have already registered") {
-  //         navigate("/registered");
-  //       } else if (data.message !== "OTP Sent") {
-  //         navigate("/error-otp");
-  //       }
-  //     });
+  useEffect(() => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ phoneNumber: "+91" + mobileNumber }),
+    };
+    fetch("https://plugg-otp-auth.onrender.com/phone", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setMessage(data.message);
+        if (data.message === "You have already registered") {
+          navigate("/registered");
+        } else if (data.message !== "OTP Sent") {
+          navigate("/error-otp");
+        }
+      });
 
-  //   console.log(message);
-  // }, [mobileNumber]);
+    console.log(message);
+  }, [mobileNumber]);
 
   const handleInput = (index, e) => {
     if (e.target.value) {
