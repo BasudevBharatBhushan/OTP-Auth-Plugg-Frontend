@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { ThreeDots } from "react-loader-spinner";
 
 const Home = () => {
   const { mobileNumber } = useParams();
@@ -7,6 +8,7 @@ const Home = () => {
   const [message, setMessage] = useState("");
   const [otpMessage, setOtpMessage] = useState("");
   const [otp, setOtp] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,6 +43,7 @@ const Home = () => {
   };
 
   const handleSubmit = () => {
+    setLoading(true);
     const Obtainedotp = blockRefs.current.reduce(
       (Obtainedotp, block) => Obtainedotp + block.value,
       ""
@@ -59,6 +62,7 @@ const Home = () => {
       .then((data) => {
         console.log(data);
         setOtpMessage(data.message);
+        setLoading(false);
       });
   };
 
@@ -111,6 +115,11 @@ const Home = () => {
           onInput={(e) => handleInput(5, e)}
         />
       </div>
+      {loading && (
+        <div className="loader">
+          <ThreeDots color="#fff" height="50px" width="50px" />
+        </div>
+      )}
       <button className="submit-button" onClick={handleSubmit}>
         SUBMIT
       </button>
