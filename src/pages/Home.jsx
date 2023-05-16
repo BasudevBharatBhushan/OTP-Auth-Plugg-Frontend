@@ -29,7 +29,7 @@ const Home = () => {
       updatedAt: new Date().toISOString(),
     };
 
-    fetch(`${API}/${number}`)
+    fetch(`${API}/user/${number}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -40,7 +40,7 @@ const Home = () => {
             updatedAt: new Date().toISOString(),
           };
 
-          fetch(`${API}/${number}`, {
+          fetch(`${API}/user/${number}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
