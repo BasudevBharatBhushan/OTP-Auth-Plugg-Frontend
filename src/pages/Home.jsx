@@ -57,7 +57,7 @@ const Home = () => {
         } else {
           console.log("User doesn't exist");
           // Phone number doesn't exist, create a new user
-          fetch("${API}", {
+          fetch(`${API}/user`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
