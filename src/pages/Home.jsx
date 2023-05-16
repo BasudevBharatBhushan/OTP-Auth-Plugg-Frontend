@@ -8,7 +8,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { auth } from "../firebase.config";
 
 const Home = () => {
-  const API = `https://plugg-python-otp-backend.onrender.com`;
+  const API = "https://plugg-python-otp-backend.onrender.com";
   const { mobileNumber } = useParams();
   const [otp, setOtp] = useState("");
   const [loading, setLoading] = useState(false);
