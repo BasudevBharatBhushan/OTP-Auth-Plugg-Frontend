@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cntr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("./assets/background.jpg");
+  /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kartik_Aaryan_in_2022.jpg/330px-Kartik_Aaryan_in_2022.jpg"); */
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  /* Adjust styles for screens smaller than 768px */
+  .cntr {
+    padding: 0px;
+  }
+}
+
+.react-tel-input .form-control {
+  @apply !w-full py-6 !text-base;
+}
+
+.opt-container {
+  @apply flex justify-between gap-2;
+}
+.opt-container input {
+  @apply !mr-0 flex-1 py-5 outline-none text-black font-bold;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Orbitron:wght@400;800&family=Poppins:wght@300&display=swap");
+
+.font-custom {
+  font-family: "Poppins", sans-serif;
+}
