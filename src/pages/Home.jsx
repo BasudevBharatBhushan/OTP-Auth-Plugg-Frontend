@@ -125,7 +125,7 @@ const Home = () => {
           updatedAt: new Date().toISOString(),
         };
         const formattedNumber = "+91" + mobileNumber;
-        fetch(`${API}/${formattedNumber}`, {
+        fetch(`${API}/user/${formattedNumber}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
